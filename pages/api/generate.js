@@ -8,21 +8,14 @@ const openai = new OpenAIApi(configuration);
 export default async function (req, res) {
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
-    prompt: generatePrompt(req.body.animal),
+    prompt: generatePrompt(req.body),
     temperature: 0.6,
+    max_tokens: 1000,
   });
   res.status(200).json({ result: completion.data.choices[0].text });
+  // res.status(200)
 }
 
-function generatePrompt(animal) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `Suggest three names for an animal that is a superhero.
-
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${capitalizedAnimal}
-Names:`;
+function generatePrompt(input) {
+  return `Suggest a diet plan  containing Indian food in winter for a ${input.gender} whose age is ${input.age} and ${input.lifestyle} lifestyle and profession as ${input.proffesion} and aiming for ${input.aim} for a day for breakfast ,lunch and dinner and may include some specilas as well and make it in a tabular form and return it in array form`;
 }

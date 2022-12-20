@@ -1,6 +1,6 @@
 # OpenAI API Quickstart - Node.js example app
 
-This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
+This is Diet Plan maker app that uses OPEN AI API. It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Follow the instructions below to get set up.
 
 ## Setup
 
@@ -20,15 +20,10 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
    $ npm install
    ```
 
-5. Make a copy of the example environment variables file
 
-   ```bash
-   $ cp .env.example .env
-   ```
+5. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file
 
-6. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file
-
-7. Run the app
+6. Run the app
 
    ```bash
    $ npm run dev
